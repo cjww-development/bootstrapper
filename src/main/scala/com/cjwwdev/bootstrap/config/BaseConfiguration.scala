@@ -19,7 +19,7 @@ import com.typesafe.config.ConfigFactory
 
 trait BaseConfiguration {
   val configuration = ConfigFactory.load
-  val env = play.Environment.simple.mode
+  val env = play.api.Play.current.mode
   val appName = configuration.getString("appName")
 
   val APPLICATION_ID = configuration.getString(s"$env.application.id")
