@@ -6,6 +6,8 @@ bootstrapper
 
 To utilise this library add this to your sbt build file
 
+Common configuration for microservices
+
 ```
 "com.cjww-dev.libs" % "bootstrapper_2.11" % "<SEE_VERSION_ABOVE>" 
 ```
