@@ -15,10 +15,10 @@
 // limitations under the License.
 package com.cjwwdev.bootstrap.config
 
-import com.typesafe.config.{Config, ConfigFactory}
+import com.typesafe.config.ConfigFactory
 
 trait BaseConfiguration {
-  private val config: Config    = ConfigFactory.load
+  val config                    = ConfigFactory.load
 
   val appName                   = config.getString("appName")
 
@@ -27,5 +27,4 @@ trait BaseConfiguration {
   val AUTH_MIRCOSERVICE_ID      = config.getString("application-ids.auth-microservice")
   val ACCOUNTS_MIRCOSERVICE_ID  = config.getString("application-ids.accounts-microservice")
   val SESSION_STORE_ID          = config.getString("application-ids.accounts-microservice")
-
 }
