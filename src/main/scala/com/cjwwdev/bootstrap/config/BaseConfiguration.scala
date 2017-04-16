@@ -23,8 +23,11 @@ trait BaseConfiguration {
   val appName                   = config.getString("appName")
 
   val APPLICATION_ID            = config.getString(s"application-ids.$appName")
+  val DEVERSITY_ID              = config.getString("application-ids.deversity-frontend")
+  val DIAG_ID                   = config.getString("application-ids.diagnostics-frontend")
+  val HUB_ID                    = config.getString("application-ids.hub-id")
   val AUTH_SERVICE_ID           = config.getString("application-ids.auth-service")
   val AUTH_MIRCOSERVICE_ID      = config.getString("application-ids.auth-microservice")
   val ACCOUNTS_MIRCOSERVICE_ID  = config.getString("application-ids.accounts-microservice")
-  val SESSION_STORE_ID          = config.getString("application-ids.accounts-microservice")
+  val SESSION_STORE_ID          = config.getString("application-ids.session-store")
 }
