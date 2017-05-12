@@ -13,7 +13,10 @@ version := btVersion
 scalaVersion := "2.11.11"
 organization := "com.cjww-dev.libs"
 
-val codeDep: Seq[ModuleID] = Seq("com.typesafe.play" % "play_2.11" % "2.5.14")
+val codeDep: Seq[ModuleID] = Seq(
+  "com.typesafe.play" % "play_2.11" % "2.5.14",
+  "com.cjww-dev.libs" % "logging_2.11" % "0.4.0"
+)
 
 val testDep: Seq[ModuleID] = Seq(
   "org.scalatestplus.play" % "scalatestplus-play_2.11" % "2.0.0",
@@ -22,6 +25,8 @@ val testDep: Seq[ModuleID] = Seq(
 
 libraryDependencies ++= codeDep
 libraryDependencies ++= testDep
+
+resolvers += "cjww-dev" at "http://dl.bintray.com/cjww-development/releases"
 
 bintrayOrganization := Some("cjww-development")
 bintrayReleaseOnPublish in ThisBuild := false

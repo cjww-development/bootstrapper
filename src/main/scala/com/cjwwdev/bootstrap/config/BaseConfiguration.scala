@@ -15,19 +15,26 @@
 // limitations under the License.
 package com.cjwwdev.bootstrap.config
 
+import com.cjwwdev.logging.Logger
 import com.typesafe.config.ConfigFactory
 
 trait BaseConfiguration {
   val config                    = ConfigFactory.load
 
+  val env = {
+    val mode = play.api.Environment.simple().mode.toString
+    Logger.info(s"[BaseConfiguration] - [env] : application mode is $mode")
+    mode
+  }
+
   val appName                   = config.getString("appName")
 
-  val APPLICATION_ID            = config.getString(s"application-ids.$appName")
-  val DEVERSITY_ID              = config.getString("application-ids.deversity-frontend")
-  val DIAG_ID                   = config.getString("application-ids.diagnostics-frontend")
-  val HUB_ID                    = config.getString("application-ids.hub-id")
-  val AUTH_SERVICE_ID           = config.getString("application-ids.auth-service")
-  val AUTH_MIRCOSERVICE_ID      = config.getString("application-ids.auth-microservice")
-  val ACCOUNTS_MIRCOSERVICE_ID  = config.getString("application-ids.accounts-microservice")
-  val SESSION_STORE_ID          = config.getString("application-ids.session-store")
+  val APPLICATION_ID            = config.getString(s"$env.application-ids.$appName")
+  val DEVERSITY_ID              = config.getString(s"$env.application-ids.deversity-frontend")
+  val DIAG_ID                   = config.getString(s"$env.application-ids.diagnostics-frontend")
+  val HUB_ID                    = config.getString(s"$env.application-ids.hub-id")
+  val AUTH_SERVICE_ID           = config.getString(s"$env.application-ids.auth-service")
+  val AUTH_MIRCOSERVICE_ID      = config.getString(s"$env.application-ids.auth-microservice")
+  val ACCOUNTS_MIRCOSERVICE_ID  = config.getString(s"$env.application-ids.accounts-microservice")
+  val SESSION_STORE_ID          = config.getString(s"$env.application-ids.session-store")
 }
