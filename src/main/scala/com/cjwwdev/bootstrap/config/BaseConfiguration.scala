@@ -20,16 +20,16 @@ import com.typesafe.config.ConfigFactory
 trait BaseConfiguration {
   val config                    = ConfigFactory.load
 
-  val env: String
+  val env                       = config.getString("environment")
 
-  lazy val appName                   = config.getString("appName")
+  val appName                   = config.getString("appName")
 
-  lazy val APPLICATION_ID            = config.getString(s"$env.application-ids.$appName")
-  lazy val DEVERSITY_ID              = config.getString(s"$env.application-ids.deversity-frontend")
-  lazy val DIAG_ID                   = config.getString(s"$env.application-ids.diagnostics-frontend")
-  lazy val HUB_ID                    = config.getString(s"$env.application-ids.hub-id")
-  lazy val AUTH_SERVICE_ID           = config.getString(s"$env.application-ids.auth-service")
-  lazy val AUTH_MIRCOSERVICE_ID      = config.getString(s"$env.application-ids.auth-microservice")
-  lazy val ACCOUNTS_MIRCOSERVICE_ID  = config.getString(s"$env.application-ids.accounts-microservice")
-  lazy val SESSION_STORE_ID          = config.getString(s"$env.application-ids.session-store")
+  val APPLICATION_ID            = config.getString(s"$env.application-ids.$appName")
+  val DEVERSITY_ID              = config.getString(s"$env.application-ids.deversity-frontend")
+  val DIAG_ID                   = config.getString(s"$env.application-ids.diagnostics-frontend")
+  val HUB_ID                    = config.getString(s"$env.application-ids.hub-id")
+  val AUTH_SERVICE_ID           = config.getString(s"$env.application-ids.auth-service")
+  val AUTH_MIRCOSERVICE_ID      = config.getString(s"$env.application-ids.auth-microservice")
+  val ACCOUNTS_MIRCOSERVICE_ID  = config.getString(s"$env.application-ids.accounts-microservice")
+  val SESSION_STORE_ID          = config.getString(s"$env.application-ids.session-store")
 }
