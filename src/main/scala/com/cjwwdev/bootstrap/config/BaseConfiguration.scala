@@ -27,7 +27,7 @@ trait BaseConfiguration {
   val APPLICATION_ID            = config.getString(s"$env.application-ids.$appName")
   val DEVERSITY_ID              = config.getString(s"$env.application-ids.deversity-frontend")
   val DIAG_ID                   = config.getString(s"$env.application-ids.diagnostics-frontend")
-  val HUB_ID                    = config.getString(s"$env.application-ids.hub-id")
+  val HUB_ID                    = config.getString(s"$env.application-ids.hub-frontend")
   val AUTH_SERVICE_ID           = config.getString(s"$env.application-ids.auth-service")
   val AUTH_MIRCOSERVICE_ID      = config.getString(s"$env.application-ids.auth-microservice")
   val ACCOUNTS_MIRCOSERVICE_ID  = config.getString(s"$env.application-ids.accounts-microservice")
