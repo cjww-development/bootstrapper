@@ -4,7 +4,7 @@ import scala.util.{Try, Success, Failure}
 val btVersion: String = {
   Try(ConfigFactory.load.getString("version")) match {
     case Success(ver) => ver
-    case Failure(_) => "INVALID_RELEASE_VERSION"
+    case Failure(_) => "0.1.0"
   }
 }
 
@@ -18,17 +18,11 @@ val codeDep: Seq[ModuleID] = Seq(
   "com.cjww-dev.libs" % "logging_2.11" % "0.4.0"
 )
 
-val testDep: Seq[ModuleID] = Seq(
-  "org.scalatestplus.play" % "scalatestplus-play_2.11" % "2.0.0",
-  "org.mockito" % "mockito-core" % "2.7.22"
-)
-
 libraryDependencies ++= codeDep
-libraryDependencies ++= testDep
 
 resolvers += "cjww-dev" at "http://dl.bintray.com/cjww-development/releases"
 
 bintrayOrganization := Some("cjww-development")
-bintrayReleaseOnPublish in ThisBuild := false
+bintrayReleaseOnPublish in ThisBuild := true
 bintrayRepository := "releases"
 bintrayOmitLicense := true
