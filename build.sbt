@@ -11,7 +11,10 @@ version := btVersion
 scalaVersion := "2.11.11"
 organization := "com.cjww-dev.libs"
 
-lazy val root = (project in file(".")).enablePlugins(PlayScala)
+libraryDependencies ++= Seq(
+  "com.typesafe" % "config" % "1.2.1",
+  "org.scalatestplus.play" % "scalatestplus-play_2.11" % "3.1.0" % Test
+)
 
 resolvers += "cjww-dev" at "http://dl.bintray.com/cjww-development/releases"
 
