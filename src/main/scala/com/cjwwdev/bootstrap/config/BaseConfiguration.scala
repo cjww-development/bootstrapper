@@ -29,7 +29,7 @@ trait BaseConfiguration {
   val DIAG_ID                   = config.getString(s"$env.application-ids.diagnostics-frontend")
   val HUB_ID                    = config.getString(s"$env.application-ids.hub-frontend")
   val AUTH_SERVICE_ID           = config.getString(s"$env.application-ids.auth-service")
-  val AUTH_MIRCOSERVICE_ID      = config.getString(s"$env.application-ids.auth-microservice")
-  val ACCOUNTS_MIRCOSERVICE_ID  = config.getString(s"$env.application-ids.accounts-microservice")
+  val AUTH_MICROSERVICE_ID      = config.getString(s"$env.application-ids.auth-microservice")
+  val ACCOUNTS_MICROSERVICE_ID  = config.getString(s"$env.application-ids.accounts-microservice")
   val SESSION_STORE_ID          = config.getString(s"$env.application-ids.session-store")
 }
